@@ -24,3 +24,19 @@ sudo apt-get install -y docker-ce
 sudo apt-get install -y docker-ce-cli
 sudo apt-get install -y containerd.io
 
+# Install the .NET SDK
+# See: https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#1804-
+wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-3.1
+
+# Runtime only
+# sudo apt-get update
+# sudo apt-get install -y aspnetcore-runtime-3.1
+
+# Clone the dotnet demo app if it doesn't already exist in the shared folder.
+if [ ! -d /vagrant/dotnet-docker ]; then
+   git clone https://github.com/dotnet/dotnet-docker /vagrant/dotnet-docker
+fi
