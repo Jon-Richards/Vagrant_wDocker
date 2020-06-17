@@ -3,7 +3,7 @@
 Contains a Vagrant vm that will install the .NET Core SDK on Ubuntu.  By
 default, it clones a sample ASP.NET Core app into the shared directory.
 
-To run the same app:
+To run the sample app:
 ```
 $ cd /vagrant/dotnet-docker/samples/aspnetapp
 $ sudo docker build -t aspnetapp .
